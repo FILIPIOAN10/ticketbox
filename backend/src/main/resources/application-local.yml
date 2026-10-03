@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/ticketbox
+    username: ticketbox
+    password: ticketbox
+  data.redis:
+    host: localhost
+    port: 6380
+
+app:
+  cookies.secure: false
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.orm.jdbc.bind: trace
