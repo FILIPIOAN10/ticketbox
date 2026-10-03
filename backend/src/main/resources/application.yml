@@ -1,0 +1,28 @@
+spring:
+  application.name: ticketbox
+  profiles.default: local
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: validate
+    properties.hibernate:
+      jdbc.time_zone: UTC
+      default_batch_fetch_size: 50
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    write.WRITE_BIGDECIMAL_AS_PLAIN: true
+    default-property-inclusion: non_null
+  servlet.multipart:
+    max-file-size: 5MB
+    max-request-size: 6MB
+
+server:
+  error.include-message: never
+  error.include-stacktrace: never
+
+management.endpoints.web.exposure.include: health,info
+
+app:
+  base-url: http://localhost:5173
+  cookies.secure: true
